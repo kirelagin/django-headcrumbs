@@ -97,8 +97,15 @@ And you get something like this:
 
 ![Resulting breadcrumbs example](http://kirelagin.ru/~kirrun/headcrumbs/example.png)
 
-Appendix. Other options
-------------------------
+
+Appendix A. About the name
+---------------------------
+
+Ok, I admit, I'm not very good at thinking up  names for projects.  
+But it seems to me that *headcrumbs* sounds at least funny =).
+
+Appendix B. Other options
+--------------------------
 
 *   [`django-crumbs`][3] defines crumbs in templates which seems weird to me.
     Because, you know, templates are **templates**. They are used for different
