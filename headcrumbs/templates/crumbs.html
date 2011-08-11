@@ -1,5 +1,7 @@
+{% if crumbs %}
 <ul class="nav">
 {% for crumb in crumbs %}
     <li><a href="{{ crumb.url }}">{{ crumb.text }}</a></li>
 {% endfor %}
 </ul>
+{% endif %}
