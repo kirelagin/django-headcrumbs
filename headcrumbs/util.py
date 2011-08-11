@@ -16,3 +16,9 @@ def name_from_pk(model, transform=None):
     text = unicode(model.objects.get(pk=pk))
     return transform(text) if transform else text
   return _f
+
+def args_id(*args):
+  return args
+
+def kwargs_id(**kwargs):
+  return kwargs
