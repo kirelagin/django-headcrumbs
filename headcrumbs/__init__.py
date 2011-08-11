@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from django.core.urlresolvers import reverse, resolve
+from django.core.urlresolvers import reverse, resolve, get_callable
 
 def is_crumbed(view):
-  return hasattr(view, 'crumb_text')
+  return hasattr(get_callable(view), 'crumb_text')
 
 
 class CrumbedView(object):
   def __init__(self, view, url, args, kwargs):
+    view = get_callable(view)
     if (not is_crumbed(view)):
       raise ValueError("The view is not crumbed")
     self._view = view

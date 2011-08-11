@@ -89,13 +89,17 @@ Just style it properly and you get a pretty breadcrumbs bar. For example:
         display: inline;
     }
 
-    ul.nav li:after {
-        content: " >";
+    ul.nav li:before {
+        content: "> ";
+    }
+
+    ul.nav li:first-child:before {
+        content: none;
     }
 
 And you get something like this:
 
-![Resulting breadcrumbs example](http://kirelagin.ru/~kirrun/headcrumbs/example.png)
+![Resulting breadcrumbs example](http://kirelagin.ru/~kirrun/headcrumbs/bar.png)
 
 
 Appendix A. About the name

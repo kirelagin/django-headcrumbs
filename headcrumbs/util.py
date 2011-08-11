@@ -6,7 +6,9 @@ def name_from_pk(model, transform=None):
   Returns a function which takes one of its arguments (hopefully the first one)
   lookups an instance of model with this primary key and returns its unicode
   representation.
-  Oprionally applies given transformation before returning a value.
+
+  Optionally the function will apply given transformation
+  before returning a value.
   '''
   def _f(*args, **kwargs):
     args = list(args) + kwargs.values()
