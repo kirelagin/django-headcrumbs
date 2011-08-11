@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import headcrumbs.util as hc
-from headcrumbs.util import CrumbedView
+import headcrumbs as hc
+from headcrumbs import CrumbedView
 
 class CrumbsMiddleware(object):
   def process_view(self, request, view_func, view_args, view_kwargs):
