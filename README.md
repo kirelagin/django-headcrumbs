@@ -6,14 +6,14 @@ django-headcrumbs
 What's that?
 -------------
 
-Breadcrumbs let users visiting your website see where exactly they are located
-and how to get back. That's somwthing like “Back” button but
+Breadcrumbs let users visiting your website see where exactly they are now
+and how to get back. That's something like “Back” button but
 even more powerfull. Anyway, I suppose you came here because you are
-looking for breadcrumbs and you know why do you need it.
+looking for breadcrumbs and you know why you need it.
 
 Why did I start a new project? Well the answer is rather obvious:
 I needed breadcrumbs and couldn't find a good enough solution
-(see bottom of this page).
+(see bottom of this file).
 
 How to use
 -----------
@@ -59,14 +59,14 @@ the path we followed (e.g. from the employee whose profile we are viewing).
 That's why you see a helper function `headcrumbs.util.name_from_pk` there.
 
 Now when, I hope, you got _The General Idea_ you'll want to look at the
-[Full example](http://github.com/kirelagin/django-headcrumbs/wiki/Full-example). I advise you also to read docstring, they are
+[Full example](http://github.com/kirelagin/django-headcrumbs/wiki/Full-example).
+I advise you also to read docstrings, as they are
 really useful (at least I tried to make them useful).
 
 ### Crumbs output ###
-
-You have defined your website structure. It's time to output
+You have defined your website structure. Time to output
 that navigation bar with breadcrumbs! It's going to be easy.
-Thanks to out cool middleware you get `crumbs` variable in your templates.
+Thanks to our cool middleware you get `crumbs` variable in your templates.
 It's a list of dictionaries with `'text'` and `'url'` records each. Just
 iterate over it and you get your path! For your convenience there is a
 `crumbs.html` template included. It will output something like this:
