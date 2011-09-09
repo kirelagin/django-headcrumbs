@@ -19,11 +19,11 @@ How to use
 -----------
 
 ### Installation ###
-1. `git clone git://github.com/kirelagin/django-headcrumbs.git`
-2. Copy (or, even better, symlink) `headcrumbs` directory to your Django project
+1. `git clone git://github.com/kirelagin/django-headcrumbs.git`.
+2. Copy (or, even better, symlink) `headcrumbs` directory to your Django project.
 3. Add `'headcrumbs.middleware.CrumbsMiddleware'` to `MIDDLEWARE_CLASSES`
-  in your `settings.py`
-4. (Optional) add `'headcrumbs'` to `INSTALLED_APPS` variable in your
+   in your `settings.py`.
+4. _(Optional)_ Add `'headcrumbs'` to `INSTALLED_APPS` variable in your
   `settings.py`. It will be handy if you are going to use included template
   (see “Crumbs output” below).
 
@@ -40,18 +40,20 @@ of relations between views.
 
 **views.py**:
 
-    from headcrumbs.decorators import crumb
-    from headcrumbs.util import name_from_pk
+```python
+from headcrumbs.decorators import crumb
+from headcrumbs.util import name_from_pk
 
-    @crumb('Stuff') # This is the root crumb -- it doesn't have a parent
-    def index(request):
-        # In our example you'll get list of divisions
-        # and output it.
+@crumb('Stuff') # This is the root crumb -- it doesn't have a parent
+def index(request):
+    # In our example you'll get list of divisions
+    # and output it.
 
-    @crumb(name_from_pk(Category), parent=index)
-    def division(request, slug):
-        # Here you find all employees from the given division
-        # and list them.
+@crumb(name_from_pk(Category), parent=index)
+def division(request, slug):
+    # Here you find all employees from the given division
+    # and list them.
+```
 
 The second node in our example path is “Managers” which is the name
 of a division. It is something dynamic and can be determined only from
@@ -71,31 +73,35 @@ It's a list of dictionaries with `'text'` and `'url'` records each. Just
 iterate over it and you get your path! For your convenience there is a
 `crumbs.html` template included. It will output something like this:
 
-    <ul class="nav">
-        <li><a href="/">Stuff</a></li>
-        <li><a href="/divisions/managers/">Managers</a></li>
-        <li><a href="/people/3/">John</a></li>
-    </ul>
+```html
+<ul class="nav">
+    <li><a href="/">Stuff</a></li>
+    <li><a href="/divisions/managers/">Managers</a></li>
+    <li><a href="/people/3/">John</a></li>
+</ul>
+```
 
 Just style it properly and you get a pretty breadcrumbs bar. For example:
 
-    ul.nav {
-        display: inline;
-        padding-left: 0px;
-    }
+```css
+ul.nav {
+    display: inline;
+    padding-left: 0px;
+}
 
-    ul.nav li {
-        list-style-type: none;
-        display: inline;
-    }
+ul.nav li {
+    list-style-type: none;
+    display: inline;
+}
 
-    ul.nav li:before {
-        content: "> ";
-    }
+ul.nav li:before {
+    content: "> ";
+}
 
-    ul.nav li:first-child:before {
-        content: none;
-    }
+ul.nav li:first-child:before {
+    content: none;
+}
+```
 
 And you get something like this:
 
