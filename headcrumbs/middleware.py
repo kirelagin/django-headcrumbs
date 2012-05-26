@@ -9,7 +9,7 @@ class CrumbsMiddleware(object):
 
   def process_template_response(self, request, response):
     if self._view is None:
-      return response.context_data
+      return response
 
     p = self._view.parent
     view_path = []
