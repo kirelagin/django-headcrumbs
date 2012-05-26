@@ -29,10 +29,10 @@ How to use
 
 ### Defining crumbs ###
 I'm one of those strange people who believe that for each _view_ you can say
-which one came before it. Imagine you are on a website and you are somwhere
+which one came before it. Imagine you are on a website and you are somewhere
 in `Stuff > Managers > John > more`. Well, thanks to the trail left by
-developer youknow that you are reading detailed bio of a manager
-whose name is John. It mean that `detailed` view structurally comes after
+the developer, you know that you are reading detailed bio of a manager
+whose name is John. It means that `detailed` view structurally comes after
 `person` view, which in turn comes after `division` view and so on.
 
 You'll be using `headcrumbs.decorators.crumb` decorator to describe this kind
@@ -46,7 +46,7 @@ from headcrumbs.util import name_from_pk
 
 @crumb('Stuff') # This is the root crumb -- it doesn't have a parent
 def index(request):
-    # In our example you'll get list of divisions
+    # In our example you'll fetch the list of divisions (from a database)
     # and output it.
 
 @crumb(name_from_pk(Category), parent=index)
