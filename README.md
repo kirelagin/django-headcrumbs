@@ -105,7 +105,7 @@ ul.nav li:first-child:before {
 
 And you get something like this:
 
-![Resulting breadcrumbs example](http://kirelagin.ru/~kirrun/headcrumbs/bar.png)
+![Resulting breadcrumbs example](http://kir.elagin.me/~kirrun/headcrumbs/bar.png)
 
 
 Appendix A. About the name
