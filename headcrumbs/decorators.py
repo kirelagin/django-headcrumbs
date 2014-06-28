@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 
 def crumb(text, parent=None, parent_args=[], parent_kwargs={}):
   '''Marks view as crumbed (add information for vreadcrumbs construction.

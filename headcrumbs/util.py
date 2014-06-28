@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.utils import six
+
 
 def name_from_pk(model, transform=None):
   '''Gets a text representation for an object from its primary key.
@@ -13,7 +17,10 @@ def name_from_pk(model, transform=None):
   def _f(*args, **kwargs):
     args = list(args) + kwargs.values()
     pk = args[0]
-    text = unicode(model.objects.get(pk=pk))
+    if six.PY2:
+      text = unicode(model.objects.get(pk=pk))
+    else:
+      text = str(model.objects.get(pk=pk))
     return transform(text) if transform else text
   return _f
 

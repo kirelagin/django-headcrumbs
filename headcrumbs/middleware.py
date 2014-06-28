@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 import headcrumbs as hc
 from headcrumbs import CrumbedView
+
 
 class CrumbsMiddleware(object):
   def process_view(self, request, view_func, view_args, view_kwargs):

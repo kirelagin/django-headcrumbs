@@ -3,6 +3,7 @@ django-headcrumbs
 
 [Breadcrumbs][1] for [Django][2] that are not going to eat your brains!
 
+
 What's that?
 -------------
 
@@ -14,6 +15,17 @@ looking for breadcrumbs and you know why you need it.
 Why did I start a new project? Well the answer is rather obvious:
 I needed breadcrumbs and couldn't find a good enough solution
 (see bottom of this file).
+
+
+Python 3
+---------
+
+I think the codebase is compatible with Python 3 (at least I use it with Python 3),
+but I didn't do any serious testing, so there might be broken codepaths. Please,
+please open an issue if something's broken.
+
+As a result of Python 3 compatibility, Django 1.6+ is required.
+
 
 How to use
 -----------

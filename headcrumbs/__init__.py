@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 from django.core.urlresolvers import reverse, resolve, get_callable
+from django.utils import six
+
 
 def is_crumbed(view):
   return hasattr(get_callable(view), 'crumb_text')
@@ -20,7 +23,7 @@ class CrumbedView(object):
   @property
   def text(self):
     val = self._view.crumb_text
-    if isinstance(val, basestring):
+    if isinstance(val, six.string_types):
       return val
     else:
       try:
