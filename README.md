@@ -1,7 +1,7 @@
 django-headcrumbs
 ==================
 
-[Breadcrumbs][1] for [Django][2] that are not going to eat your brains!
+[Breadcrumbs][breadcrumbs] for [Django][django] that are not going to eat your brains!
 
 
 What's that?
@@ -138,8 +138,8 @@ Appendix B. Other options
 *   [`django-simplecrumbs`][5] is nearly perfect. Really. But in my opinion it's a bit… hm…
     messy. Both in its interface and in source code.
 
-[1]: http://en.wikipedia.org/wiki/Breadcrumb_%28navigation%29
-[2]: http://www.djangoproject.com/
-[3]: http://code.google.com/p/django-crumbs/
-[4]: http://github.com/chronossc/django-breadcrumbs/
-[5]: http://bitbucket.org/anti_social/django-simplecrumbs
+[breadcrumbs]:          https://en.wikipedia.org/wiki/Breadcrumb_%28navigation%29
+[django]:               https://www.djangoproject.com/
+[3]:                    https://code.google.com/p/django-crumbs/
+[4]:                    https://github.com/chronossc/django-breadcrumbs/
+[5]:                    https://bitbucket.org/anti_social/django-simplecrumbs
