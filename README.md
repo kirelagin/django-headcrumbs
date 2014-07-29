@@ -119,7 +119,7 @@ ul.nav li:first-child:before {
 
 And you get something like this:
 
-![Resulting breadcrumbs example](http://kir.elagin.me/~kirrun/headcrumbs/bar.png)
+![Resulting breadcrumbs example](https://raw.githubusercontent.com/kirelagin/django-headcrumbs/gh-pages/bar.png))
 
 
 Appendix A. About the name
