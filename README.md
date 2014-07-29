@@ -63,15 +63,15 @@ def index(request):
     # In our example you'll fetch the list of divisions (from a database)
     # and output it.
 
-@crumb(name_from_pk(Category), parent=index)
+@crumb(name_from_pk(Division), parent=index)
 def division(request, slug):
     # Here you find all employees from the given division
     # and list them.
 ```
 
 The second node in our example path is “Managers” which is the name
-of a division. It is something dynamic and can be determined only from
-the path we followed (e.g. from the employee whose profile we are viewing).
+of a `Division`. It is something dynamic and can be determined only from
+the path we followed (e.g. from the `Employee` whose profile we are viewing).
 That's why you see a helper function `headcrumbs.util.name_from_pk` there.
 
 Now when, I hope, you got _The General Idea_ you'll want to look at the
