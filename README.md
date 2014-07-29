@@ -35,7 +35,9 @@ How to use
 2. Copy (or, even better, symlink) `headcrumbs` directory to your Django project.
 3. Add `'headcrumbs.middleware.CrumbsMiddleware'` to `MIDDLEWARE_CLASSES`
    in your `settings.py`.
-4. _(Optional)_ Add `'headcrumbs'` to `INSTALLED_APPS` variable in your
+4. Use [`TemplateResponse`][template-response] for the responses
+   that include crumbs. (Actually, just always use it. It's cool.)
+5. _(Optional)_ Add `'headcrumbs'` to `INSTALLED_APPS` variable in your
   `settings.py`. It will be handy if you are going to use included template
   (see “Crumbs output” below).
 
@@ -140,6 +142,7 @@ Appendix B. Other options
 
 [breadcrumbs]:          https://en.wikipedia.org/wiki/Breadcrumb_%28navigation%29
 [django]:               https://www.djangoproject.com/
+[template-response]:    https://docs.djangoproject.com/en/dev/ref/template-response/
 [3]:                    https://code.google.com/p/django-crumbs/
 [4]:                    https://github.com/chronossc/django-breadcrumbs/
 [5]:                    https://bitbucket.org/anti_social/django-simplecrumbs
