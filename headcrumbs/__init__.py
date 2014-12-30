@@ -22,36 +22,15 @@ class CrumbedView(object):
 
   @property
   def text(self):
-    val = self._view.crumb_text
-    if isinstance(val, six.string_types):
-      return val
-    else:
-      try:
-        return self._helper_call(val)
-      except TypeError:
-        raise TypeError('String or callable expected but got: {0}'.format(val))
+    return self._try_call_value(self._view.crumb_text)
 
   @property
   def _parent_args(self):
-    val = self._view.crumb_p_args
-    if isinstance(val, list):
-      return val
-    else:
-      try:
-        return self._helper_call(val)
-      except TypeError as e:
-        raise TypeError('List or callable expected but got: {0}'.format(val))
+    return self._try_call_value(self._view.crumb_p_args)
 
   @property
   def _parent_kwargs(self):
-    val = self._view.crumb_p_kwargs
-    if isinstance(val, dict):
-      return val
-    else:
-      try:
-        return self._helper_call(val)
-      except TypeError:
-        raise TypeError('Dictionary or callable expected but got: {0}'.format(val))
+    return self._try_call_value(self._view.crumb_p_kwargs)
 
   @property
   def parent(self):
@@ -70,14 +49,11 @@ class CrumbedView(object):
   def as_dict(self):
     return {'text': self.text, 'url': self.url}
 
-  def _helper_call(self, val):
+  def _try_call_value(self, val):
     if callable(val):
-      try:
-        return val(*self._args, **self._kwargs)
-      except TypeError as e:
-        raise ValueError(e)
+      return val(*self._args, **self._kwargs)
     else:
-      raise TypeError("Callable expected")
+      return val
 
 
   @staticmethod

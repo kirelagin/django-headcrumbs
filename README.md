@@ -57,7 +57,7 @@ of relations between views.
 from headcrumbs.decorators import crumb
 from headcrumbs.util import name_from_pk
 
-@crumb('Staff') # This is the root crumb -- it doesn’t have a parent
+@crumb('Staff')  # This is the root crumb -- it doesn’t have a parent
 def index(request):
     # In our example you’ll fetch the list of divisions (from a database)
     # and output it.
@@ -119,6 +119,19 @@ ul.nav li:first-child:before {
 And you get something like this:
 
 ![Resulting breadcrumbs example](https://raw.githubusercontent.com/kirelagin/django-headcrumbs/gh-pages/bar.png)
+
+### Localisation ###
+Of course you can localise your crumbs but remember to use _lazy_ versions of `ugettext` and friends!
+
+```python
+from headcrumbs.decorators import crumb
+from headcrumbs.util import name_from_pk
+from django.utils.translation import ugettext_lazy as _
+
+@crumb(_('Staff'))  # 'Staff' will be localized
+def index(request):
+    # And so on...
+```
 
 
 Appendix A. About the name
