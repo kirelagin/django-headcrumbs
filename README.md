@@ -31,8 +31,7 @@ How to use
 -----------
 
 ### Installation ###
-1. `git clone git://github.com/kirelagin/django-headcrumbs.git`.
-2. Copy (or, even better, symlink) `headcrumbs` directory to your Django project.
+1. Install `django-headcrumbs` using your favourite way of installing Django packages.
 3. Add `'headcrumbs.middleware.CrumbsMiddleware'` to `MIDDLEWARE_CLASSES`
    in your `settings.py`.
 4. Use [`TemplateResponse`][template-response] for the responses
